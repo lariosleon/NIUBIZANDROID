@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text=""
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/tvSsl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvState"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text=""
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvSerialNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSsl"
+        android:layout_marginTop="10dp"
+        android:text="" />
+
+    <LinearLayout
+        android:id="@+id/filterBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_below="@+id/tvSerialNumber">
+
+        <EditText
+            android:id="@+id/filterText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:hint="Filters (case sensitive, divider is ; )"/>
+
+        <Button
+            android:id="@+id/filterBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCheckboxes"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/filterBar">
+
+        <CheckBox
+            android:id="@+id/cbEnableLog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/enable_log"/>
+
+        <CheckBox
+            android:id="@+id/cbActivateSsl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/activate_ssl"/>
+
+        <CheckBox
+            android:id="@+id/cbDisableBtFilter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/disable_bt_filter" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/llCheckboxes"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/choose_device" />
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_above="@+id/llButtons"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" >
+        <RadioGroup
+            android:id="@+id/optionRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </RadioGroup>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvAppVersion"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button_unitary_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="@string/button_unitary_test" />
+
+        <Button
+            android:id="@+id/button_loop_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="@string/button_loop_test" />
+
+        <Button
+            android:id="@+id/button_easy_pairing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:visibility="invisible"
+            android:text="@string/button_easy_pairing" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAppVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvAppDemoVersion"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/app_version" />
+
+    <TextView
+        android:id="@+id/tvAppDemoVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvBuildDate"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/app_is_test_version" />
+
+    <TextView
+        android:id="@+id/tvBuildDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvAddonVersion"
+        android:layout_alignParentLeft="true"
+        android:text="@string/build_date" />
+    
+    <TextView
+        android:id="@+id/tvAddonVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/addon_version" />
+
+</RelativeLayout>

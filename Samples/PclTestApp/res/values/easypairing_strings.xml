@@ -1,0 +1,6 @@
+<resources>
+    <string name="button_startdiscovering">SCAN</string>
+    <string name="ingenico_discovering">Scanning Bluetooth Ingenico Terminals</string>
+    <string name="ingenico_discovering_stopped">Bluetooth Ingenico Terminals Scan stopped</string>
+    <string name="ingenico_pairing">Pairing Bluetooth Ingenico Terminals</string>
+</resources>

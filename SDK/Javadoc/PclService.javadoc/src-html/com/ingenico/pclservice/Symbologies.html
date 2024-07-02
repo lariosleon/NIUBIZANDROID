@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package com.ingenico.pclservice;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>/** This enum lists all the available symbologies that can be used<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * on barcode reader. <a name="line.4"></a>
+<span class="sourceLineNo">005</span> * <a name="line.5"></a>
+<span class="sourceLineNo">006</span> *<a name="line.6"></a>
+<span class="sourceLineNo">007</span> */<a name="line.7"></a>
+<span class="sourceLineNo">008</span>public enum Symbologies {<a name="line.8"></a>
+<span class="sourceLineNo">009</span>        /** Unknown Symbology */<a name="line.9"></a>
+<span class="sourceLineNo">010</span>        ICBarCode_Unknown("Unknown Symbology", -1),<a name="line.10"></a>
+<span class="sourceLineNo">011</span>        /** All Symbologies */<a name="line.11"></a>
+<span class="sourceLineNo">012</span>        ICBarCode_AllSymbologies("All Symbologies", 0),                                 <a name="line.12"></a>
+<span class="sourceLineNo">013</span>        /** EAN13 Barcode Type */<a name="line.13"></a>
+<span class="sourceLineNo">014</span>        ICBarCode_EAN13("EAN 13", 1),<a name="line.14"></a>
+<span class="sourceLineNo">015</span>        /** EAN8 Barcode Type */<a name="line.15"></a>
+<span class="sourceLineNo">016</span>        ICBarCode_EAN8("EAN 8", 2),<a name="line.16"></a>
+<span class="sourceLineNo">017</span>        /** UPCA Barcode Type */<a name="line.17"></a>
+<span class="sourceLineNo">018</span>        ICBarCode_UPCA("UPC-A", 3),<a name="line.18"></a>
+<span class="sourceLineNo">019</span>        /** UPCE Barcode Type */<a name="line.19"></a>
+<span class="sourceLineNo">020</span>        ICBarCode_UPCE("UPC-E", 4),                                                                             <a name="line.20"></a>
+<span class="sourceLineNo">021</span>        /** EAN13 add-on 2 Barcode Type */<a name="line.21"></a>
+<span class="sourceLineNo">022</span>        ICBarCode_EAN13_2("EAN 13 add-on 2", 5),<a name="line.22"></a>
+<span class="sourceLineNo">023</span>        /** EAN8 add-on 2 Barcode Type */<a name="line.23"></a>
+<span class="sourceLineNo">024</span>        ICBarCode_EAN8_2("EAN 8 add-on 2", 6),<a name="line.24"></a>
+<span class="sourceLineNo">025</span>        /** UPCA add-on 2 Barcode Type */<a name="line.25"></a>
+<span class="sourceLineNo">026</span>        ICBarCode_UPCA_2("UPC-A add-on 2", 7),<a name="line.26"></a>
+<span class="sourceLineNo">027</span>        /** UPCE add-on 2 Barcode Type */<a name="line.27"></a>
+<span class="sourceLineNo">028</span>        ICBarCode_UPCE_2("UPC-E add-on 2", 8),                                                  <a name="line.28"></a>
+<span class="sourceLineNo">029</span>        /** EAN13 add-on 5 Barcode Type */<a name="line.29"></a>
+<span class="sourceLineNo">030</span>        ICBarCode_EAN13_5("EAN 13 add-on 5", 9),<a name="line.30"></a>
+<span class="sourceLineNo">031</span>        /** EAN8 add-on 5 Barcode Type */<a name="line.31"></a>
+<span class="sourceLineNo">032</span>        ICBarCode_EAN8_5("EAN 8 add-on 5", 10),<a name="line.32"></a>
+<span class="sourceLineNo">033</span>        /** UPCA add-on 5 Barcode Type */<a name="line.33"></a>
+<span class="sourceLineNo">034</span>        ICBarCode_UPCA_5("UPC-A add-on 5", 11),<a name="line.34"></a>
+<span class="sourceLineNo">035</span>        /** UPCE add-on 5 Barcode Type */<a name="line.35"></a>
+<span class="sourceLineNo">036</span>        ICBarCode_UPCE_5("UPC-E add-on 5", 12),<a name="line.36"></a>
+<span class="sourceLineNo">037</span>        /** Code39 Barcode Type */<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        ICBarCode_Code39("Code 39", 13),                                                                <a name="line.38"></a>
+<span class="sourceLineNo">039</span><a name="line.39"></a>
+<span class="sourceLineNo">040</span>        /** Interleaved 2 of 5 Barcode Type */<a name="line.40"></a>
+<span class="sourceLineNo">041</span>        ICBarCode_Interleaved2of5("Interleaved 2 of 5", 15),<a name="line.41"></a>
+<span class="sourceLineNo">042</span>        /** Standard 2 of 5 Barcode Type */<a name="line.42"></a>
+<span class="sourceLineNo">043</span>        ICBarCode_Standard2of5("Standard 2 of 5", 16),<a name="line.43"></a>
+<span class="sourceLineNo">044</span>        /** Matrix 2 of 5 Barcode Type */<a name="line.44"></a>
+<span class="sourceLineNo">045</span>        ICBarCode_Matrix2of5("Matrix 2 of 5", 17),                                              <a name="line.45"></a>
+<span class="sourceLineNo">046</span>        <a name="line.46"></a>
+<span class="sourceLineNo">047</span>        /** CodaBar Barcode Type */<a name="line.47"></a>
+<span class="sourceLineNo">048</span>        ICBarCode_CodaBar("Codabar", 19),<a name="line.48"></a>
+<span class="sourceLineNo">049</span>        // Not supported in Telium BCR library<a name="line.49"></a>
+<span class="sourceLineNo">050</span>        ///** AmesCode Barcode Type */<a name="line.50"></a>
+<span class="sourceLineNo">051</span>        //ICBarCode_AmesCode("Ames Code", 20),<a name="line.51"></a>
+<span class="sourceLineNo">052</span>        /** MSI Barcode Type */<a name="line.52"></a>
+<span class="sourceLineNo">053</span>        ICBarCode_MSI("MSI Code", 21),<a name="line.53"></a>
+<span class="sourceLineNo">054</span>        /** Plessey Barcode Type */<a name="line.54"></a>
+<span class="sourceLineNo">055</span>        ICBarCode_Plessey("Plessey Code", 22),                          <a name="line.55"></a>
+<span class="sourceLineNo">056</span>        /** Code128 Barcode Type */<a name="line.56"></a>
+<span class="sourceLineNo">057</span>        ICBarCode_Code128("Code 128", 23),<a name="line.57"></a>
+<span class="sourceLineNo">058</span>        // Not supported in Telium BCR library<a name="line.58"></a>
+<span class="sourceLineNo">059</span>        ///** Code16k Barcode Type */<a name="line.59"></a>
+<span class="sourceLineNo">060</span>        //ICBarCode_Code16K("Code 16K", 24),    <a name="line.60"></a>
+<span class="sourceLineNo">061</span>        /** Code93 Barcode Type */<a name="line.61"></a>
+<span class="sourceLineNo">062</span>        ICBarCode_93("Code 93", 25),    <a name="line.62"></a>
+<span class="sourceLineNo">063</span>        /** Code11 Barcode Type */<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        ICBarCode_11("Code 11", 26),<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        /** Telepen Barcode Type */<a name="line.65"></a>
+<span class="sourceLineNo">066</span>        ICBarCode_Telepen("Telepen", 27),       <a name="line.66"></a>
+<span class="sourceLineNo">067</span>        // Not supported in Telium BCR library<a name="line.67"></a>
+<span class="sourceLineNo">068</span>        ///** Code49 Barcode Type */<a name="line.68"></a>
+<span class="sourceLineNo">069</span>        //ICBarCode_Code49("Code 49", 28),      <a name="line.69"></a>
+<span class="sourceLineNo">070</span>        /** Code39 Italian CPI Barcode Type */<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        ICBarCode_Code39_ItalianCPI("Code 39 Italian CPI", 29),                 <a name="line.71"></a>
+<span class="sourceLineNo">072</span>        /** CodeBlockA Barcode Type */<a name="line.72"></a>
+<span class="sourceLineNo">073</span>        ICBarCode_CodaBlockA("Codablock A", 30),<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        /** CodeBlockF Barcode Type */<a name="line.74"></a>
+<span class="sourceLineNo">075</span>        ICBarCode_CodaBlockF("Codablock F", 31),                                                <a name="line.75"></a>
+<span class="sourceLineNo">076</span>                        <a name="line.76"></a>
+<span class="sourceLineNo">077</span>        /** PDF417 Barcode Type */<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        ICBarCode_PDF417("PDF417", 33), <a name="line.78"></a>
+<span class="sourceLineNo">079</span>        /** GS1-128 Barcode Type */<a name="line.79"></a>
+<span class="sourceLineNo">080</span>        ICBarCode_GS1_128("GS1-128", 34),<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        /** ISBT128 Barcode Type */<a name="line.81"></a>
+<span class="sourceLineNo">082</span>        ICBarCode_ISBT128("ISBT128", 35),       <a name="line.82"></a>
+<span class="sourceLineNo">083</span>        /** MicroPDF Barcode Type */<a name="line.83"></a>
+<span class="sourceLineNo">084</span>        ICBarCode_MicroPDF("MicroPDF", 36),                     <a name="line.84"></a>
+<span class="sourceLineNo">085</span>        /** GS1 DataBarOmni Barcode Type */<a name="line.85"></a>
+<span class="sourceLineNo">086</span>    ICBarCode_GS1_DataBarOmni("GS1 Databar Omni Directional", 37),      <a name="line.86"></a>
+<span class="sourceLineNo">087</span>    /** GS1 DataBarLimited Barcode Type */<a name="line.87"></a>
+<span class="sourceLineNo">088</span>    ICBarCode_GS1_DataBarLimited("GS1 Databar Limited", 38),   <a name="line.88"></a>
+<span class="sourceLineNo">089</span>    /** GS1 DataBarExpanded Barcode Type */<a name="line.89"></a>
+<span class="sourceLineNo">090</span>    ICBarCode_GS1_DataBarExpanded("GS1 Databar Expanded", 39),  <a name="line.90"></a>
+<span class="sourceLineNo">091</span>    /** DataMatrix Barcode Type */<a name="line.91"></a>
+<span class="sourceLineNo">092</span>        ICBarCode_DataMatrix("DataMatrix", 40),         <a name="line.92"></a>
+<span class="sourceLineNo">093</span>        /** QRCode Barcode Type */<a name="line.93"></a>
+<span class="sourceLineNo">094</span>    ICBarCode_QRCode("QR Code", 41),<a name="line.94"></a>
+<span class="sourceLineNo">095</span>    /** Maxicode Barcode Type */<a name="line.95"></a>
+<span class="sourceLineNo">096</span>        ICBarCode_Maxicode("Maxicode", 42),             <a name="line.96"></a>
+<span class="sourceLineNo">097</span>        // Supported in Telium BCR library and SPMCI since SDK 9.28<a name="line.97"></a>
+<span class="sourceLineNo">098</span>        /** UPC-E1 Barcode Type */<a name="line.98"></a>
+<span class="sourceLineNo">099</span>    ICBarCode_UPCE1("UPC-E1", 43),                                                                      <a name="line.99"></a>
+<span class="sourceLineNo">100</span><a name="line.100"></a>
+<span class="sourceLineNo">101</span>    /** Aztec Barcode Type */<a name="line.101"></a>
+<span class="sourceLineNo">102</span>    ICBarCode_Aztec("Aztec", 0x4A),                                                                     <a name="line.102"></a>
+<span class="sourceLineNo">103</span>                        <a name="line.103"></a>
+<span class="sourceLineNo">104</span>    /** MaxIndex Barcode Type */<a name="line.104"></a>
+<span class="sourceLineNo">105</span>        ICBarCode_MaxIndex("Max Symbology", 0x4B);                                              <a name="line.105"></a>
+<span class="sourceLineNo">106</span>        <a name="line.106"></a>
+<span class="sourceLineNo">107</span>        private String stringValue;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        private int intValue;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>     <a name="line.109"></a>
+<span class="sourceLineNo">110</span>        Symbologies(String toString, int value) {<a name="line.110"></a>
+<span class="sourceLineNo">111</span>                this.stringValue = toString;<a name="line.111"></a>
+<span class="sourceLineNo">112</span>            this.intValue = value;<a name="line.112"></a>
+<span class="sourceLineNo">113</span>        }<a name="line.113"></a>
+<span class="sourceLineNo">114</span>        <a name="line.114"></a>
+<span class="sourceLineNo">115</span>        @Override<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    public String toString() {<a name="line.116"></a>
+<span class="sourceLineNo">117</span>        return stringValue;<a name="line.117"></a>
+<span class="sourceLineNo">118</span>    }<a name="line.118"></a>
+<span class="sourceLineNo">119</span>        <a name="line.119"></a>
+<span class="sourceLineNo">120</span>        /**<a name="line.120"></a>
+<span class="sourceLineNo">121</span>     * Return the integer value of this object. <a name="line.121"></a>
+<span class="sourceLineNo">122</span>     *<a name="line.122"></a>
+<span class="sourceLineNo">123</span>     * @return the integer value of this object<a name="line.123"></a>
+<span class="sourceLineNo">124</span>     */<a name="line.124"></a>
+<span class="sourceLineNo">125</span>        public int toInt() {<a name="line.125"></a>
+<span class="sourceLineNo">126</span>        return intValue;<a name="line.126"></a>
+<span class="sourceLineNo">127</span>    }<a name="line.127"></a>
+<span class="sourceLineNo">128</span>        <a name="line.128"></a>
+<span class="sourceLineNo">129</span>        /**<a name="line.129"></a>
+<span class="sourceLineNo">130</span>     * Return the number of supported symbologies. <a name="line.130"></a>
+<span class="sourceLineNo">131</span>     *<a name="line.131"></a>
+<span class="sourceLineNo">132</span>     * @return the number of supported symbologies<a name="line.132"></a>
+<span class="sourceLineNo">133</span>     */<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        public static int supportedSymbologiesCount() {<a name="line.134"></a>
+<span class="sourceLineNo">135</span>                return values().length - 3;<a name="line.135"></a>
+<span class="sourceLineNo">136</span>        }<a name="line.136"></a>
+<span class="sourceLineNo">137</span>}<a name="line.137"></a>
+<span class="sourceLineNo">138</span><a name="line.138"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

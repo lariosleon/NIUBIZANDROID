@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">File Sharing Sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="waiting_terminal_title">Waiting terminal</string>
+    <string name="waiting_terminal_message">We are preparing your payment terminal to connect to your device, please wait while initializing</string>
+    <string name="no_terminal_detected_title">No terminal detected</string>
+    <string name="no_terminal_detected_message">There is no terminal connected and/or selected to the app. Please connect and select a terminal in the app in order to use the File Sharing feature.</string>
+    <string name="terminal_not_connected_title">Terminal not connected</string>
+    <string name="terminal_not_connected_message">Please start the File Sharing Server and connect your terminal to it in order to send file.</string>
+    <string name="uploading_title">Uploading</string>
+    <string name="uploading_message">Uploading your file...</string>
+    <string name="uploading_allfiles_message">Uploading files...</string>
+    <string name="uploading_files_message">Uploading %d files on %d</string>
+    <string name="uploaded_error_title">Uploading Error</string>
+    <string name="uploaded_error_files_message">Error %d files upload on %d: %d</string>
+    <string name="uploaded_error_file_message">Error files upload: %d</string>
+    <string name="uploaded_title">Uploaded!</string>
+    <string name="uploaded_message">Your file has been uploaded.</string>
+    <string name="uploaded_files_message">%d files has been uploaded.</string>
+    <string name="downloading_title">Downloading</string>
+    <string name="downloading_message">Downloading the file...</string>
+    <string name="downloaded_title">Downloaded!</string>
+    <string name="downloaded_message">The file has been dowloaded.</string>
+    <string name="deleting_title">Deleting</string>
+    <string name="deleting_message">Deleting the file...</string>
+    <string name="deleted_title">Deleted!</string>
+    <string name="deleted_message">The file has been deleted.</string>
+    <string name="send_btn_message">Send files</string>
+    <string name="multiselect_btn_message">Multi-Select</string>
+    <string name="str_connected">Companion is connected</string>
+    <string name="str_not_connected">Companion is not connected</string>
+    <string-array name="install_array">
+        <item>No Install</item>
+        <item>Install</item>
+        <item>Install Offline</item>
+    </string-array>
+</resources>
